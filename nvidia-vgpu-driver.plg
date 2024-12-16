@@ -1,8 +1,8 @@
 <?xml version='1.0' standalone='yes'?>
 <!DOCTYPE PLUGIN [
   <!ENTITY name      "nvidia-vgpu-driver">
-  <!ENTITY author    "stl88083365">
-  <!ENTITY version   "2023.06.28">
+  <!ENTITY author    "natloh">
+  <!ENTITY version   "2024.12.15">
   <!ENTITY launch    "Settings/nvidia-vgpu-driver">
   <!ENTITY gitURL    "https://github.com/&author;/unraid-&name;/raw/master">
   <!ENTITY pluginURL "&gitURL;/&name;.plg">
@@ -15,6 +15,9 @@
 <PLUGIN  name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;" min="6.11.5" support="https://www.lxg2016.com/">
 
 <CHANGES>
+##2024.12.15
+- Works with natloh build and deployment
+
 ###2023.05.01
 - Fix Bug
 
@@ -86,7 +89,7 @@ fi
 }
 
 get_version() {
-LAT_PACKAGE="$(wget -qO- https://api.github.com/repos/stl88083365/unraid-nvidia-vgpu-driver/releases/tags/${KERNEL_V} | jq -r '.assets[].name' | grep "${PACKAGE}" | grep -E -v '\.md5$' | sort -V | tail -1)"
+LAT_PACKAGE="$(wget -qO- https://api.github.com/repos/natloh/unraid-nvidia-vgpu-driver/releases/tags/${KERNEL_V} | jq -r '.assets[].name' | grep "${PACKAGE}" | grep -E -v '\.md5$' | sort -V | tail -1)"
 if [ -z "$LAT_PACKAGE" ]; then
   if [ -z "$CUR_V" ]; then
     echo
@@ -142,7 +145,7 @@ fi
 #Set variables
 KERNEL_V="$(uname -r)"
 PACKAGE="nvidia"
-DL_URL="https://github.com/stl88083365/unraid-nvidia-vgpu-driver/releases/download/${KERNEL_V}"
+DL_URL="https://github.com/natloh/unraid-nvidia-vgpu-driver/releases/download/${KERNEL_V}"
 
 if [ ! -d "&packages;/${KERNEL_V%%-*}" ]; then
   mkdir -p "&packages;/${KERNEL_V%%-*}"
