@@ -1,6 +1,6 @@
 # Unraid Nvidia vGPU Driver plugin
 
-- Latest version currently supported: 6.12.9
+- Latest version currently supported: 7.0 rc-1
 
 - Support unraid docker video decoding and virtual machine add vgpu at the same time, 10 and 20 series common card unlock.
 
