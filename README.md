@@ -1,4 +1,5 @@
-# Unraid Nvidia vGPU Driver plugin
+# - DEPRECATED - Unraid Nvidia vGPU Driver plugin - DEPRECATED -
+## Try https://github.com/novidio/unraid-novidio-vgpu-driver/
 
 - Latest version currently supported: 7.0 rc-1
 
